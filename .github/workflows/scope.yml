@@ -15,5 +15,6 @@ jobs:
       - name: Scope for Javascript
         uses: undefinedlabs/scope-for-javascript-action@v1
         with:
+          dsn: ${{secrets.SCOPE_DSN}} # required:  
           command: yarn test
           command-browser: yarn cypress:run
