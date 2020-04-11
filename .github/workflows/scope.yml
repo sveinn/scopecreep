@@ -1,0 +1,19 @@
+name: Scope Javascript React Starter
+
+on: [push]
+
+jobs:
+  scope:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+      - name: Install dependencies
+        run: npm install
+      - name: Scope for Javascript
+        uses: undefinedlabs/scope-for-javascript-action@v1
+        with:
+          command: yarn test
+          command-browser: yarn cypress:run
